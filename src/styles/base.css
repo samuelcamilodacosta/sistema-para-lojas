@@ -1,0 +1,329 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root,
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --font-sans: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --app-max-width: 1440px;
+  --app-gutter: 2rem;
+  --header-bar-height: 2.75rem;
+
+  /* Surfaces */
+  --color-bg: #0a0e14;
+  --color-bg-elevated: #121820;
+  --color-surface: #161d28;
+  --color-surface-inset: #0f141d;
+  --color-surface-muted: rgba(15, 20, 29, 0.72);
+  --color-surface-muted-border: rgba(71, 85, 105, 0.38);
+  --color-panel: #161d28;
+  --color-input-bg: #0f172a;
+  --color-input-border: #3d4d66;
+  --color-input-text: #e2e8f0;
+
+  /* Borders */
+  --color-border: #2a3544;
+  --color-border-strong: #3d4d66;
+  --color-border-subtle: rgba(148, 163, 184, 0.1);
+
+  /* Elevation */
+  --shadow-panel: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  --shadow-header: 0 4px 24px rgba(2, 6, 23, 0.35);
+
+  /* Shell */
+  --color-header-bg-start: rgba(10, 14, 20, 0.98);
+  --color-header-bg-end: rgba(10, 14, 20, 0.92);
+  --color-header-shadow: rgba(2, 6, 23, 0.35);
+  --color-nav-group-bg: rgba(15, 20, 29, 0.82);
+  --color-nav-hover-bg: rgba(148, 163, 184, 0.1);
+  --color-nav-active-text: #ecfdf5;
+  --color-nav-hover-text: #f1f5f9;
+  --color-brand-title-start: #f8fafc;
+  --color-brand-title-end: #cbd5e1;
+  --color-page-title: #f8fafc;
+  --color-on-accent: #ffffff;
+  --color-btn-muted-bg: #2a3544;
+  --color-btn-muted-hover: #3d4d66;
+  --color-btn-ghost-hover: #2a3544;
+  --color-row-hover: rgba(148, 163, 184, 0.06);
+  --color-chart-date-bg: rgba(15, 20, 29, 0.72);
+  --color-chart-date-border: rgba(71, 85, 105, 0.45);
+  --color-chart-date-text: #f1f5f9;
+  --color-chart-picker-filter: invert(0.85);
+  --color-prefs-bg: rgba(15, 20, 29, 0.82);
+  --color-prefs-border: #2a3544;
+  --color-prefs-active-bg: rgba(20, 184, 166, 0.16);
+
+  /* Typography */
+  --color-text: #e8edf4;
+  --color-text-soft: #cbd5e1;
+  --color-text-muted: #8b97a8;
+  --color-text-subtle: #64748b;
+  --color-text-heading: #f1f5f9;
+
+  /* Accent & brand */
+  --color-accent: #14b8a6;
+  --color-accent-soft: #2dd4bf;
+  --color-accent-strong: #0d9488;
+  --color-accent-muted: #99f6e4;
+  --color-accent-rgb: 20, 184, 166;
+
+  --color-brand: #10b981;
+  --color-brand-strong: #059669;
+  --color-brand-soft: #34d399;
+  --color-brand-rgb: 16, 185, 129;
+  --color-brand-gradient-start: #34d399;
+  --color-brand-gradient-end: #16a34a;
+
+  --color-highlight: #818cf8;
+  --color-highlight-soft: #a5b4fc;
+  --color-highlight-strong: #6366f1;
+  --color-highlight-rgb: 129, 140, 248;
+
+  /* KPI cards */
+  --color-kpi-bg-start: #1a2230;
+  --color-kpi-bg-end: #121820;
+  --color-kpi-inset-highlight: rgba(255, 255, 255, 0.04);
+
+  /* Metrics */
+  --color-delta-up: #5eead4;
+  --color-delta-up-bg: rgba(20, 184, 166, 0.12);
+  --color-delta-up-border: rgba(45, 212, 191, 0.24);
+  --color-delta-down: #94a3b8;
+  --color-delta-down-bg: rgba(100, 116, 139, 0.14);
+  --color-delta-down-border: rgba(148, 163, 184, 0.28);
+  --color-delta-neutral-bg: rgba(71, 85, 105, 0.22);
+  --color-delta-neutral-border: rgba(71, 85, 105, 0.38);
+
+  /* Semantic */
+  --color-success: #4ade80;
+  --color-success-bg: rgba(34, 197, 94, 0.14);
+  --color-success-border: rgba(34, 197, 94, 0.32);
+  --color-warning: #facc15;
+  --color-warning-bg: rgba(234, 179, 8, 0.14);
+  --color-warning-border: rgba(234, 179, 8, 0.32);
+  --color-danger: #f87171;
+  --color-danger-bg: rgba(239, 68, 68, 0.14);
+  --color-danger-border: rgba(239, 68, 68, 0.32);
+  --color-danger-solid: #dc2626;
+  --color-danger-solid-hover: #b91c1c;
+
+  --color-stock-alert-out-bg: rgba(239, 68, 68, 0.1);
+  --color-stock-alert-out-border: rgba(239, 68, 68, 0.28);
+  --color-stock-alert-low-bg: rgba(234, 179, 8, 0.1);
+  --color-stock-alert-low-border: rgba(234, 179, 8, 0.28);
+  --color-stock-badge-out-text: #fca5a5;
+  --color-stock-badge-low-text: #fde047;
+
+  /* Payment badges */
+  --color-payment-pix-bg: rgba(20, 184, 166, 0.14);
+  --color-payment-pix-text: #5eead4;
+  --color-payment-cash-bg: rgba(56, 189, 248, 0.14);
+  --color-payment-cash-text: #7dd3fc;
+  --color-payment-card-bg: rgba(168, 85, 247, 0.14);
+  --color-payment-card-text: #c4b5fd;
+
+  --color-focus: var(--color-accent);
+
+  /* Charts */
+  --color-chart-grid: rgba(71, 85, 105, 0.35);
+  --color-chart-tick: #8b97a8;
+  --color-chart-legend: #cbd5e1;
+  --color-chart-tooltip-bg: rgba(15, 23, 42, 0.96);
+  --color-chart-tooltip-border: rgba(71, 85, 105, 0.6);
+  --color-chart-tooltip-title: #f8fafc;
+  --color-chart-tooltip-body: #cbd5e1;
+  --color-chart-doughnut-muted: #94a3b8;
+  --color-chart-doughnut-accent: #f8fafc;
+
+  --scrollbar-size: 5px;
+  --scrollbar-thumb: rgba(100, 116, 139, 0.45);
+  --scrollbar-thumb-hover: rgba(20, 184, 166, 0.55);
+  --scrollbar-thumb-active: rgba(45, 212, 191, 0.75);
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+
+  --color-bg: #f4f6f9;
+  --color-bg-elevated: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-inset: #eef1f6;
+  --color-surface-muted: #f8fafc;
+  --color-surface-muted-border: #dfe4ec;
+  --color-panel: #ffffff;
+  --color-input-bg: #ffffff;
+  --color-input-border: #c5ced9;
+  --color-input-text: #1a2332;
+
+  --color-border: #dfe4ec;
+  --color-border-strong: #b8c2d0;
+  --color-border-subtle: rgba(26, 35, 50, 0.06);
+
+  --shadow-panel: 0 1px 2px rgba(26, 35, 50, 0.04), 0 4px 12px rgba(26, 35, 50, 0.04);
+  --shadow-header: 0 1px 0 rgba(26, 35, 50, 0.05), 0 4px 16px rgba(26, 35, 50, 0.05);
+
+  --color-header-bg-start: rgba(255, 255, 255, 0.98);
+  --color-header-bg-end: rgba(255, 255, 255, 0.94);
+  --color-header-shadow: rgba(26, 35, 50, 0.06);
+  --color-nav-group-bg: #ffffff;
+  --color-nav-hover-bg: rgba(13, 148, 136, 0.06);
+  --color-nav-active-text: #0f766e;
+  --color-nav-hover-text: #1a2332;
+  --color-brand-title-start: #121a26;
+  --color-brand-title-end: #3d4a5c;
+  --color-page-title: #121a26;
+  --color-on-accent: #ffffff;
+  --color-btn-muted-bg: #eef1f6;
+  --color-btn-muted-hover: #dfe4ec;
+  --color-btn-ghost-hover: #eef1f6;
+  --color-row-hover: rgba(26, 35, 50, 0.04);
+  --color-chart-date-bg: #ffffff;
+  --color-chart-date-border: #dfe4ec;
+  --color-chart-date-text: #1a2332;
+  --color-chart-picker-filter: none;
+  --color-prefs-bg: #ffffff;
+  --color-prefs-border: #dfe4ec;
+  --color-prefs-active-bg: rgba(13, 148, 136, 0.1);
+
+  --color-text: #1a2332;
+  --color-text-soft: #3d4a5c;
+  --color-text-muted: #5c6b7f;
+  --color-text-subtle: #8b99ab;
+  --color-text-heading: #121a26;
+
+  --color-accent: #0d9488;
+  --color-accent-soft: #14b8a6;
+  --color-accent-strong: #0f766e;
+  --color-accent-muted: #115e59;
+  --color-accent-rgb: 13, 148, 136;
+
+  --color-brand: #059669;
+  --color-brand-strong: #047857;
+  --color-brand-soft: #10b981;
+  --color-brand-rgb: 5, 150, 105;
+  --color-brand-gradient-start: #10b981;
+  --color-brand-gradient-end: #059669;
+
+  --color-highlight: #6366f1;
+  --color-highlight-soft: #818cf8;
+  --color-highlight-strong: #4f46e5;
+  --color-highlight-rgb: 99, 102, 241;
+
+  --color-kpi-bg-start: #ffffff;
+  --color-kpi-bg-end: #f8fafc;
+  --color-kpi-inset-highlight: rgba(255, 255, 255, 0.9);
+
+  --color-delta-up: #0f766e;
+  --color-delta-up-bg: #ecfdf5;
+  --color-delta-up-border: #99f6e4;
+  --color-delta-down: #5c6b7f;
+  --color-delta-down-bg: #f1f5f9;
+  --color-delta-down-border: #cbd5e1;
+  --color-delta-neutral-bg: #f1f5f9;
+  --color-delta-neutral-border: #dfe4ec;
+
+  --color-success: #166534;
+  --color-success-bg: #ecfdf5;
+  --color-success-border: #a7f3d0;
+  --color-warning: #92400e;
+  --color-warning-bg: #fffbeb;
+  --color-warning-border: #fde68a;
+  --color-danger: #991b1b;
+  --color-danger-bg: #fef2f2;
+  --color-danger-border: #fecaca;
+  --color-danger-solid: #dc2626;
+  --color-danger-solid-hover: #b91c1c;
+
+  --color-stock-alert-out-bg: #fef2f2;
+  --color-stock-alert-out-border: #fecaca;
+  --color-stock-alert-low-bg: #fffbeb;
+  --color-stock-alert-low-border: #fde68a;
+  --color-stock-badge-out-text: #b91c1c;
+  --color-stock-badge-low-text: #92400e;
+
+  --color-payment-pix-bg: #ecfdf5;
+  --color-payment-pix-text: #0f766e;
+  --color-payment-cash-bg: #eff6ff;
+  --color-payment-cash-text: #1d4ed8;
+  --color-payment-card-bg: #f5f3ff;
+  --color-payment-card-text: #6d28d9;
+
+  --color-chart-grid: rgba(92, 107, 127, 0.2);
+  --color-chart-tick: #5c6b7f;
+  --color-chart-legend: #3d4a5c;
+  --color-chart-tooltip-bg: #ffffff;
+  --color-chart-tooltip-border: #dfe4ec;
+  --color-chart-tooltip-title: #121a26;
+  --color-chart-tooltip-body: #3d4a5c;
+  --color-chart-doughnut-muted: #5c6b7f;
+  --color-chart-doughnut-accent: #121a26;
+
+  --scrollbar-thumb: rgba(100, 116, 139, 0.32);
+  --scrollbar-thumb-hover: rgba(13, 148, 136, 0.42);
+  --scrollbar-thumb-active: rgba(13, 148, 136, 0.62);
+}
+
+.scrollbar-refined {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.scrollbar-refined:hover,
+.scrollbar-refined:focus-within {
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+.scrollbar-refined::-webkit-scrollbar {
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
+}
+
+.scrollbar-refined::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 6px 0;
+}
+
+.scrollbar-refined::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  transition: background-color 0.2s ease;
+}
+
+.scrollbar-refined:hover::-webkit-scrollbar-thumb,
+.scrollbar-refined:focus-within::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+}
+
+.scrollbar-refined::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+}
+
+.scrollbar-refined::-webkit-scrollbar-thumb:active {
+  background-color: var(--scrollbar-thumb-active);
+}
+
+.scrollbar-refined::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.hidden {
+  display: none;
+}

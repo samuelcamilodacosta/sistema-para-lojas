@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'"
+    />
+    <script>(function(){try{var t=localStorage.getItem('sistema:theme');var l=localStorage.getItem('sistema:locale');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');document.documentElement.lang=l==='en'?'en':'pt-BR';}catch(e){}})();</script>
+    <title>Início · Sistema para Lojas</title>
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/navigation.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/dashboard.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <div class="app-shell">
+          <div class="app-header-inner">
+          <a href="#" class="brand" data-route="dashboard" data-i18n-aria="app.brandAria" aria-label="Sistema para Lojas — ir para início">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </span>
+            <span class="brand-text">
+              <strong class="brand-title" data-i18n="app.title">Sistema para Lojas</strong>
+              <span class="brand-tagline" data-i18n="app.tagline">Gestão inteligente para o seu negócio</span>
+            </span>
+          </a>
+
+          <div class="app-header-controls">
+            <nav class="app-nav" data-i18n-aria="nav.mainAria" aria-label="Navegação principal">
+              <div class="nav-group">
+                <span class="nav-group-label" data-i18n="nav.group.operation">Operação</span>
+                <div class="nav-group-items">
+                  <a href="#" class="nav-link" data-route="dashboard">
+                    <span class="nav-link-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+                        <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+                      </svg>
+                    </span>
+                    <span data-i18n="nav.dashboard">Início</span>
+                  </a>
+                  <a href="#" class="nav-link" data-route="estoque">
+                    <span class="nav-link-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+                      </svg>
+                    </span>
+                    <span data-i18n="nav.stock">Estoque</span>
+                  </a>
+                  <a href="#" class="nav-link" data-route="vendas">
+                    <span class="nav-link-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                      </svg>
+                    </span>
+                    <span data-i18n="nav.sales">Vendas</span>
+                  </a>
+                </div>
+              </div>
+
+              <span class="header-divider" aria-hidden="true"></span>
+
+              <div class="nav-group">
+                <span class="nav-group-label" data-i18n="nav.group.queries">Consultas</span>
+                <div class="nav-group-items">
+                  <a href="#" class="nav-link nav-link-stacked" data-route="historico-estoque">
+                    <span class="nav-link-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                      </svg>
+                    </span>
+                    <span class="nav-link-text">
+                      <span class="nav-link-text-main" data-i18n="nav.stockHistoryMain">Histórico</span>
+                      <span class="nav-link-text-sub" data-i18n="nav.stockHistorySub">de estoque</span>
+                    </span>
+                  </a>
+                  <a href="#" class="nav-link nav-link-stacked" data-route="historico-vendas">
+                    <span class="nav-link-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                      </svg>
+                    </span>
+                    <span class="nav-link-text">
+                      <span class="nav-link-text-main" data-i18n="nav.salesHistoryMain">Histórico</span>
+                      <span class="nav-link-text-sub" data-i18n="nav.salesHistorySub">de vendas</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </nav>
+
+            <span class="header-divider" aria-hidden="true"></span>
+
+            <div class="app-preferences" role="group" data-i18n-aria="prefs.localeAria" aria-label="Preferências">
+              <div class="header-pref-section">
+                <span class="nav-group-label" data-i18n="prefs.themeLabel">Tema</span>
+                <div class="pref-group" role="group" data-i18n-aria="prefs.themeAria" aria-label="Alternar tema">
+                  <button type="button" class="pref-toggle" data-theme-toggle="dark" aria-pressed="true" title="Tema escuro" data-i18n-title="prefs.themeDark">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                  </button>
+                  <button type="button" class="pref-toggle" data-theme-toggle="light" aria-pressed="false" title="Tema claro" data-i18n-title="prefs.themeLight">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="header-pref-section">
+                <span class="nav-group-label" data-i18n="prefs.localeLabel">Idioma</span>
+                <div class="pref-group pref-group-locale" role="group" aria-label="Idioma">
+                  <button type="button" class="pref-toggle pref-locale" data-locale-toggle="pt" aria-pressed="true">PT</button>
+                  <button type="button" class="pref-toggle pref-locale" data-locale-toggle="en" aria-pressed="false">EN</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <div class="page-context" id="app-page-context" aria-live="polite">
+            <div class="page-context-inner">
+              <span class="page-context-accent" aria-hidden="true"></span>
+              <div class="page-context-copy">
+                <h2 class="page-context-title" id="app-page-title">Visão geral</h2>
+                <p class="page-context-desc" id="app-page-desc">Resumo de vendas, estoque e indicadores do dia.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content app-shell">
+        <section id="screen-dashboard" class="screen" data-screen>
+          <div class="dashboard-kpi-row">
+            <article class="dash-kpi dash-kpi-revenue">
+              <span class="dash-kpi-label" data-i18n="dashboard.kpi.revenueToday">Receita hoje</span>
+              <strong id="dash-today-revenue">R$ 0,00</strong>
+              <div class="dash-kpi-meta">
+                <span class="dash-kpi-delta dash-kpi-delta-neutral" id="dash-revenue-delta">—</span>
+                <span class="dash-kpi-hint" data-i18n="dashboard.kpi.vsYesterday">vs. ontem</span>
+              </div>
+            </article>
+            <article class="dash-kpi dash-kpi-sales">
+              <span class="dash-kpi-label" data-i18n="dashboard.kpi.salesToday">Vendas hoje</span>
+              <strong id="dash-today-sales">0</strong>
+              <div class="dash-kpi-meta">
+                <span class="dash-kpi-delta dash-kpi-delta-neutral" id="dash-sales-delta">—</span>
+                <span class="dash-kpi-hint" data-i18n="dashboard.kpi.vsYesterday">vs. ontem</span>
+              </div>
+            </article>
+            <article class="dash-kpi dash-kpi-ticket">
+              <span class="dash-kpi-label" data-i18n="dashboard.kpi.ticketAverageToday">Ticket médio hoje</span>
+              <strong id="dash-ticket-average">R$ 0,00</strong>
+              <div class="dash-kpi-meta">
+                <span class="dash-kpi-hint" data-i18n="dashboard.kpi.perSale">por venda realizada</span>
+              </div>
+            </article>
+            <article class="dash-kpi dash-kpi-stock">
+              <span class="dash-kpi-label" data-i18n="dashboard.kpi.stockValue">Valor em estoque</span>
+              <strong id="dash-total-value">R$ 0,00</strong>
+              <div class="dash-kpi-meta">
+                <span class="dash-kpi-hint" data-i18n="dashboard.kpi.immobilizedCapital">capital imobilizado</span>
+              </div>
+            </article>
+          </div>
+
+          <p class="dashboard-insight" id="dash-period-insight" aria-live="polite">
+            <span class="dashboard-insight-icon" aria-hidden="true">↗</span>
+            <span id="dash-period-insight-text" data-i18n="dashboard.insight.loading">Carregando indicadores do período…</span>
+          </p>
+
+          <div class="dashboard-layout">
+            <section class="panel dashboard-hero-panel">
+              <div class="panel-header chart-panel-header">
+                <div>
+                  <h3 data-i18n="dashboard.chart.performanceTitle">Performance de vendas</h3>
+                  <p id="chart-period-subtitle" class="chart-subtitle" data-i18n="dashboard.chart.defaultSubtitle">Últimos 7 dias</p>
+                </div>
+                <div class="chart-period-controls">
+                  <div class="chart-period-filters" role="group" data-i18n-aria="dashboard.chart.periodFilterAria" aria-label="Filtrar período do gráfico">
+                    <button type="button" class="chart-period-pill pill-day" data-chart-period="day" data-i18n="dashboard.chart.period.day" aria-pressed="false">
+                      Dia
+                    </button>
+                    <button type="button" class="chart-period-pill pill-week active" data-chart-period="week" data-i18n="dashboard.chart.period.week" aria-pressed="true">
+                      Semana
+                    </button>
+                    <button type="button" class="chart-period-pill pill-month" data-chart-period="month" data-i18n="dashboard.chart.period.month" aria-pressed="false">
+                      Mês
+                    </button>
+                    <button type="button" class="chart-period-pill pill-year" data-chart-period="year" data-i18n="dashboard.chart.period.year" aria-pressed="false">
+                      Ano
+                    </button>
+                  </div>
+                  <div class="chart-date-range" role="group" data-i18n-aria="dashboard.chart.dateRangeAria" aria-label="Filtrar intervalo de datas">
+                    <label class="chart-date-picker">
+                      <span class="chart-date-picker-label" data-i18n="dashboard.chart.dateFrom">De</span>
+                      <input
+                        type="date"
+                        id="chart-date-from"
+                        class="chart-date-picker-input"
+                        data-i18n-aria="dashboard.chart.dateFromAria" aria-label="Data inicial do período"
+                      />
+                    </label>
+                    <span class="chart-date-range-separator" data-i18n="dashboard.chart.dateSeparator">até</span>
+                    <label class="chart-date-picker">
+                      <span class="chart-date-picker-label" data-i18n="dashboard.chart.dateTo">Até</span>
+                      <input
+                        type="date"
+                        id="chart-date-to"
+                        class="chart-date-picker-input"
+                        data-i18n-aria="dashboard.chart.dateToAria" aria-label="Data final do período"
+                      />
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="chart-kpi-strip">
+                <div class="chart-kpi-chip chart-kpi-chip-accent">
+                  <span data-i18n="dashboard.chart.kpi.periodRevenue">Receita no período</span>
+                  <strong id="chart-period-total">R$ 0,00</strong>
+                </div>
+                <div class="chart-kpi-chip">
+                  <span data-i18n="dashboard.chart.kpi.periodSales">Vendas no período</span>
+                  <strong id="chart-period-sales">0</strong>
+                </div>
+                <div class="chart-kpi-chip">
+                  <span data-i18n="dashboard.chart.kpi.ticketAverage">Ticket médio</span>
+                  <strong id="chart-period-ticket">R$ 0,00</strong>
+                </div>
+                <div class="chart-kpi-chip">
+                  <span data-i18n="dashboard.chart.kpi.revenueChange">Variação receita</span>
+                  <span class="metric-delta dash-kpi-delta dash-kpi-delta-neutral" id="chart-period-revenue-delta">—</span>
+                </div>
+              </div>
+
+              <div class="chart-container">
+                <canvas id="sales-chart"></canvas>
+              </div>
+            </section>
+
+            <div class="dashboard-analytics-row">
+              <section class="panel dashboard-analytics-panel">
+                <div class="panel-header">
+                  <div>
+                    <h3 data-i18n="dashboard.ranking.title">Ranking de produtos</h3>
+                    <p class="chart-subtitle" data-i18n="dashboard.ranking.subtitle">Top 5 por receita no período selecionado</p>
+                  </div>
+                </div>
+                <p id="top-products-empty" class="dashboard-empty hidden" data-i18n="dashboard.ranking.empty">Nenhuma venda no período selecionado.</p>
+                <div class="chart-container">
+                  <canvas id="top-products-chart"></canvas>
+                </div>
+                <div id="top-products-ranking" class="dashboard-ranking-list hidden" data-i18n-aria="dashboard.ranking.ariaSummary" aria-label="Resumo do ranking"></div>
+              </section>
+
+              <div class="dashboard-side-panel">
+                <section class="panel dashboard-analytics-panel">
+                  <div class="panel-header">
+                    <div>
+                      <h3 data-i18n="dashboard.paymentMix.title">Mix de pagamentos</h3>
+                      <p class="chart-subtitle" data-i18n="dashboard.paymentMix.subtitle">Participação por forma de pagamento</p>
+                    </div>
+                  </div>
+                  <p id="payment-methods-empty" class="dashboard-empty hidden" data-i18n="dashboard.paymentMix.empty">Nenhuma venda no período selecionado.</p>
+                  <div id="payment-methods-mix" class="payment-mix hidden" data-i18n-aria="dashboard.paymentMix.ariaLabel" aria-label="Mix de pagamentos"></div>
+                </section>
+
+                <section class="panel dashboard-analytics-panel dashboard-stock-panel">
+                  <div class="panel-header">
+                    <div>
+                      <h3 data-i18n="dashboard.stockAlerts.title">Alertas de estoque</h3>
+                      <p class="chart-subtitle" data-i18n="dashboard.stockAlerts.subtitle">Até 5 itens esgotados ou abaixo do mínimo</p>
+                    </div>
+                    <a href="#" class="btn btn-small btn-ghost" data-route="estoque" data-i18n="dashboard.stockAlerts.viewStock">Ver estoque</a>
+                  </div>
+                  <div class="dash-stock-alerts-body">
+                    <p id="dash-stock-alerts-empty" class="dashboard-empty" data-i18n="dashboard.stockAlerts.empty">Nenhum alerta no momento.</p>
+                    <ul id="dash-stock-alerts" class="dash-stock-alerts scrollbar-refined hidden" data-i18n-aria="dashboard.stockAlerts.ariaList" aria-label="Alertas de estoque"></ul>
+                    <p id="dash-stock-alerts-more" class="dash-stock-alerts-more hidden"></p>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="screen-estoque" class="screen" data-screen>
+          <div class="stock-unified-layout">
+            <section class="panel stock-actions-panel">
+              <div class="panel-header stock-actions-header">
+                <div class="stock-action-mode-pills" role="group" data-i18n-aria="stock.actionTypeAria" aria-label="Tipo de ação">
+                  <button
+                    type="button"
+                    class="stock-action-mode-pill pill-product"
+                    data-stock-action-mode="product"
+                    aria-pressed="false"
+                    data-i18n="stock.action.registerProduct"
+                  >
+                    Cadastrar produto
+                  </button>
+                  <button
+                    type="button"
+                    class="stock-action-mode-pill pill-purchase"
+                    data-stock-action-mode="purchase"
+                    aria-pressed="false"
+                    data-i18n="stock.action.restock"
+                  >
+                    Reabastecer
+                  </button>
+                </div>
+                <a href="#" class="btn btn-small btn-ghost" data-route="historico-estoque" data-i18n="stock.action.historyLink">Histórico</a>
+              </div>
+
+              <div id="stock-purchase-block" class="stock-action-content hidden">
+                <form id="purchase-form" class="stock-inline-form" novalidate>
+                <label class="field">
+                  <span data-i18n="stock.purchase.barcode">Cód. barras</span>
+                  <input
+                    id="purchase-barcode"
+                    type="text"
+                    data-i18n-placeholder="stock.purchase.barcodePlaceholder" placeholder="Leia ou digite"
+                    inputmode="numeric"
+                    autocomplete="off"
+                  />
+                </label>
+
+                <label class="field">
+                  <span data-i18n="stock.purchase.product">Produto</span>
+                  <select id="purchase-product" required>
+                    <option value="" data-i18n-option="stock.purchase.select">Selecione</option>
+                  </select>
+                </label>
+
+                <label class="field field-narrow">
+                  <span data-i18n="stock.purchase.quantity">Qtd.</span>
+                  <input
+                    id="purchase-quantity"
+                    type="number"
+                    min="1"
+                    step="1"
+                    placeholder="50"
+                    required
+                  />
+                </label>
+
+                <label class="field">
+                  <span data-i18n="stock.purchase.note">Obs.</span>
+                  <input id="purchase-note" type="text" data-i18n-placeholder="stock.purchase.notePlaceholder" placeholder="Opcional" />
+                </label>
+
+                <button type="submit" class="btn sale-btn sale-btn-add stock-form-submit" id="purchase-submit-btn" data-i18n="stock.purchase.submit">
+                  Reabastecer
+                </button>
+                </form>
+                <p id="purchase-message" class="form-message form-message-compact" aria-live="polite"></p>
+              </div>
+
+              <div id="stock-product-form-block" class="stock-action-content hidden">
+                <form id="product-form" class="stock-inline-form stock-product-inline-form" novalidate>
+                  <input type="hidden" id="product-id" />
+
+                  <label class="field">
+                    <span data-i18n="stock.product.name">Nome</span>
+                    <input id="product-name" type="text" data-i18n-placeholder="stock.product.namePlaceholder" placeholder="Nome do produto" required />
+                  </label>
+
+                  <label class="field">
+                    <span data-i18n="stock.product.barcode">Cód. barras</span>
+                    <input
+                      id="product-barcode"
+                      type="text"
+                      data-i18n-placeholder="stock.product.barcodePlaceholder"
+                      placeholder="Opcional"
+                      inputmode="numeric"
+                      autocomplete="off"
+                    />
+                  </label>
+
+                  <label class="field field-narrow">
+                    <span data-i18n="stock.product.price">Preço</span>
+                    <input
+                      id="product-price"
+                      type="text"
+                      inputmode="decimal"
+                      class="decimal-input"
+                      data-i18n-placeholder="stock.product.pricePlaceholder" placeholder="0,00"
+                      autocomplete="off"
+                      required
+                    />
+                  </label>
+
+                  <label class="field field-narrow">
+                    <span data-i18n="stock.product.quantity">Qtd.</span>
+                    <input
+                      id="product-quantity"
+                      type="number"
+                      min="0"
+                      step="1"
+                      placeholder="0"
+                      required
+                    />
+                  </label>
+
+                  <button type="submit" class="btn sale-btn sale-btn-finish stock-form-submit" id="submit-btn">
+                    Cadastrar
+                  </button>
+
+                  <button type="button" id="cancel-edit-btn" class="btn btn-small btn-ghost hidden" data-i18n="stock.product.cancel">
+                    Cancelar
+                  </button>
+                </form>
+                <p id="form-message" class="form-message form-message-compact" aria-live="polite"></p>
+              </div>
+            </section>
+
+            <section class="panel stock-list-panel">
+              <div class="panel-header">
+                <h3 data-i18n="stock.list.title">Produtos cadastrados</h3>
+              </div>
+
+              <div class="product-list-toolbar">
+                <label class="field product-list-search">
+                  <span data-i18n="stock.list.search">Buscar</span>
+                  <input
+                    id="search-input"
+                    type="search"
+                    data-i18n-placeholder="stock.list.searchPlaceholder" placeholder="Nome ou código de barras..."
+                    class="search-input"
+                  />
+                </label>
+
+                <div class="product-list-toolbar-row">
+                  <div class="status-filter-group" role="group" data-i18n-aria="stock.list.statusFilterAria" aria-label="Filtrar por status">
+                    <span class="status-filter-label" data-i18n="stock.list.status">Status</span>
+                    <div class="status-filter-pills">
+                      <button
+                        type="button"
+                        class="status-filter-pill pill-ok"
+                        data-status-filter="ok"
+                        aria-pressed="false"
+                        data-i18n="stockStatus.ok"
+                      >
+                        Disponível
+                      </button>
+                      <button
+                        type="button"
+                        class="status-filter-pill pill-low"
+                        data-status-filter="low"
+                        aria-pressed="false"
+                        data-i18n="stockStatus.low"
+                      >
+                        Estoque baixo
+                      </button>
+                      <button
+                        type="button"
+                        class="status-filter-pill pill-out"
+                        data-status-filter="out"
+                        aria-pressed="false"
+                        data-i18n="stockStatus.out"
+                      >
+                        Esgotado
+                      </button>
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    id="product-clear-filters"
+                    class="btn btn-small btn-ghost product-filter-clear"
+                    data-i18n="stock.list.clearFilters"
+                  >
+                    Limpar filtros
+                  </button>
+                </div>
+              </div>
+
+              <p class="table-sort-hint" data-i18n="stock.list.sortHint">Clique nos cabeçalhos para ordenar a listagem.</p>
+
+              <div class="table-wrapper">
+                <table class="products-table products-table-sortable">
+                  <thead>
+                    <tr>
+                      <th scope="col">
+                        <button
+                          type="button"
+                          class="table-sort-button active"
+                          data-sort-column="name"
+                          aria-sort="ascending"
+                        >
+                          <span data-i18n="stock.table.product">Produto</span>
+                          <span class="table-sort-indicator">↑</span>
+                        </button>
+                      </th>
+                      <th scope="col" data-i18n="stock.table.barcode">Código de barras</th>
+                      <th scope="col">
+                        <button type="button" class="table-sort-button" data-sort-column="price">
+                          <span data-i18n="stock.table.price">Preço</span>
+                          <span class="table-sort-indicator"></span>
+                        </button>
+                      </th>
+                      <th scope="col">
+                        <button type="button" class="table-sort-button" data-sort-column="quantity">
+                          <span data-i18n="stock.table.stock">Estoque</span>
+                          <span class="table-sort-indicator"></span>
+                        </button>
+                      </th>
+                      <th scope="col">
+                        <button type="button" class="table-sort-button" data-sort-column="status">
+                          <span data-i18n="stock.table.status">Status</span>
+                          <span class="table-sort-indicator"></span>
+                        </button>
+                      </th>
+                      <th scope="col" data-i18n="stock.table.actions">Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody id="products-body">
+                    <tr>
+                      <td colspan="6" class="empty-state" data-i18n="stock.loading">Carregando...</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div id="products-pagination" class="table-pagination hidden" data-i18n-aria="common.pagination.productsAria" aria-label="Paginação de produtos">
+                <p id="products-page-range" class="table-pagination-range">Exibindo 0 de 0</p>
+                <div class="table-pagination-controls">
+                  <button type="button" class="btn btn-small btn-ghost" id="products-prev-page" data-i18n="common.pagination.previous">
+                    Anterior
+                  </button>
+                  <span id="products-page-info" class="table-pagination-info">Página 1 de 1</span>
+                  <button type="button" class="btn btn-small btn-ghost" id="products-next-page" data-i18n="common.pagination.next">
+                    Próxima
+                  </button>
+                </div>
+              </div>
+
+              <p id="stock-message" class="form-message" aria-live="polite"></p>
+            </section>
+          </div>
+        </section>
+
+        <section id="screen-historico-estoque" class="screen" data-screen>
+          <div class="summary-cards summary-cards-compact">
+            <article class="summary-card">
+              <span data-i18n="stockHistory.summary.totalEntries">Entradas registradas</span>
+              <strong id="stock-history-total-count">0</strong>
+            </article>
+            <article class="summary-card">
+              <span data-i18n="stockHistory.summary.monthEntries">Entradas no mês</span>
+              <strong id="stock-history-month-count">0</strong>
+            </article>
+            <article class="summary-card">
+              <span data-i18n="stockHistory.summary.totalItems">Itens adicionados (total)</span>
+              <strong id="stock-history-total-items">0</strong>
+            </article>
+            <article class="summary-card">
+              <span data-i18n="stockHistory.summary.monthItems">Itens adicionados (mês)</span>
+              <strong id="stock-history-month-items">0</strong>
+            </article>
+          </div>
+
+          <section class="panel">
+            <div class="panel-header">
+              <h3 data-i18n="stockHistory.panel.title">Alterações de estoque</h3>
+            </div>
+
+            <div class="product-list-toolbar">
+              <label class="field product-list-search">
+                <span data-i18n="common.search">Buscar</span>
+                <input
+                  id="stock-history-search"
+                  type="search"
+                  data-i18n-placeholder="stockHistory.searchPlaceholder"
+                  placeholder="Produto, código ou observação..."
+                  class="search-input"
+                />
+              </label>
+
+              <div class="product-list-toolbar-row">
+                <div class="status-filter-group" role="group" data-i18n-aria="stockHistory.typeFilterAria" aria-label="Filtrar por tipo">
+                  <span class="status-filter-label" data-i18n="stockHistory.typeLabel">Tipo</span>
+                  <div class="status-filter-pills">
+                    <button
+                      type="button"
+                      class="status-filter-pill pill-ok"
+                      data-movement-filter="purchase"
+                      aria-pressed="false"
+                      data-i18n="stockHistory.type.purchases"
+                    >
+                      Compras
+                    </button>
+                    <button
+                      type="button"
+                      class="status-filter-pill pill-low"
+                      data-movement-filter="adjustment"
+                      aria-pressed="false"
+                      data-i18n="stockHistory.type.adjustments"
+                    >
+                      Ajustes manuais
+                    </button>
+                    <button
+                      type="button"
+                      class="status-filter-pill pill-out"
+                      data-movement-filter="outbound"
+                      aria-pressed="false"
+                      data-i18n="stockHistory.type.outbound"
+                    >
+                      Saídas
+                    </button>
+                  </div>
+                </div>
+
+                <div class="date-range-group" role="group" data-i18n-aria="common.periodFilterAria" aria-label="Filtrar por período">
+                  <span class="status-filter-label" data-i18n="common.period">Período</span>
+                  <div class="date-range-inline">
+                    <div class="date-range-presets">
+                      <button type="button" class="date-range-preset" data-date-preset="today" aria-pressed="false" data-i18n="common.preset.today">
+                        Hoje
+                      </button>
+                      <button type="button" class="date-range-preset" data-date-preset="7" aria-pressed="false" data-i18n="common.preset.last7Days">
+                        7 dias
+                      </button>
+                      <button type="button" class="date-range-preset" data-date-preset="month" aria-pressed="false" data-i18n="common.preset.thisMonth">
+                        Este mês
+                      </button>
+                      <button type="button" class="date-range-preset" data-date-preset="year" aria-pressed="false" data-i18n="common.preset.thisYear">
+                        Este ano
+                      </button>
+                    </div>
+                    <input
+                      id="stock-history-date-from"
+                      type="date"
+                      class="date-range-input"
+                      data-i18n-aria="common.dateFromAria"
+                      aria-label="Data inicial"
+                    />
+                    <span class="date-range-separator" aria-hidden="true">–</span>
+                    <input
+                      id="stock-history-date-to"
+                      type="date"
+                      class="date-range-input"
+                      data-i18n-aria="common.dateToAria"
+                      aria-label="Data final"
+                    />
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  id="stock-history-clear-filters"
+                  class="btn btn-small btn-ghost product-filter-clear"
+                  data-i18n="common.clearFilters"
+                >
+                  Limpar filtros
+                </button>
+              </div>
+            </div>
+
+            <div class="table-wrapper">
+              <table class="products-table products-table-sortable stock-history-table">
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      <button
+                        type="button"
+                        class="table-sort-button active"
+                        data-sort-column="date"
+                        aria-sort="descending"
+                      >
+                        <span data-i18n="stockHistory.table.date">Data</span>
+                        <span class="table-sort-indicator">↓</span>
+                      </button>
+                    </th>
+                    <th scope="col">
+                      <button type="button" class="table-sort-button" data-sort-column="name">
+                        <span data-i18n="stock.table.product">Produto</span>
+                        <span class="table-sort-indicator"></span>
+                      </button>
+                    </th>
+                    <th scope="col" data-i18n="stock.table.barcode">Código de barras</th>
+                    <th scope="col">
+                      <button type="button" class="table-sort-button" data-sort-column="quantity">
+                        <span data-i18n="stockHistory.table.quantity">Quantidade</span>
+                        <span class="table-sort-indicator"></span>
+                      </button>
+                    </th>
+                    <th scope="col" data-i18n="stockHistory.table.note">Observação</th>
+                  </tr>
+                </thead>
+                <tbody id="stock-history-body">
+                  <tr>
+                    <td colspan="5" class="empty-state" data-i18n="stockHistory.loading">Carregando...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="stock-history-pagination" class="table-pagination hidden" data-i18n-aria="stockHistory.paginationAria" aria-label="Paginação do histórico">
+              <p id="stock-history-page-range" class="table-pagination-range">Exibindo 0 de 0</p>
+              <div class="table-pagination-controls">
+                <button type="button" class="btn btn-small btn-ghost" id="stock-history-prev-page" data-i18n="common.pagination.previous">
+                  Anterior
+                </button>
+                <span id="stock-history-page-info" class="table-pagination-info">Página 1 de 1</span>
+                <button type="button" class="btn btn-small btn-ghost" id="stock-history-next-page" data-i18n="common.pagination.next">
+                  Próxima
+                </button>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section id="screen-vendas" class="screen" data-screen>
+          <div class="summary-cards summary-cards-compact summary-cards-tight">
+            <article class="summary-card">
+              <span data-i18n="sales.summary.totalSales">Total de vendas</span>
+              <strong id="sales-total-count">0</strong>
+            </article>
+            <article class="summary-card">
+              <span data-i18n="sales.summary.salesToday">Vendas hoje</span>
+              <strong id="sales-today-count">0</strong>
+            </article>
+            <article class="summary-card">
+              <span data-i18n="sales.summary.todayRevenue">Faturamento do dia</span>
+              <strong id="sales-today-revenue">R$ 0,00</strong>
+            </article>
+          </div>
+
+          <div class="sales-page-layout">
+            <section class="panel sale-register-panel">
+              <div class="panel-header sale-panel-header">
+                <div class="sale-panel-title">
+                  <h3 data-i18n="sales.register.title">Nova venda</h3>
+                  <span id="sale-cart-count" class="sale-cart-count" data-i18n="sales.register.cartCount.zero">0 itens</span>
+                </div>
+                <div class="sale-live-total" aria-live="polite">
+                  <span data-i18n="sales.register.total">Total</span>
+                  <strong id="sale-total-preview">R$ 0,00</strong>
+                </div>
+              </div>
+
+              <div class="sale-add-row">
+                <label class="field sale-field-search">
+                  <span data-i18n="sales.register.searchLabel">Código de barras ou produto</span>
+                  <div class="sale-search-wrap">
+                    <input
+                      id="sale-search"
+                      type="search"
+                      data-i18n-placeholder="sales.register.searchPlaceholder"
+                      placeholder="Leia o código ou digite o nome do produto"
+                      autocomplete="off"
+                      autofocus
+                      role="combobox"
+                      aria-autocomplete="list"
+                      aria-expanded="false"
+                      aria-controls="sale-search-suggestions"
+                    />
+                    <ul
+                      id="sale-search-suggestions"
+                      class="sale-search-suggestions hidden"
+                      role="listbox"
+                      data-i18n-aria="sales.register.suggestionsAria" aria-label="Produtos encontrados"
+                    ></ul>
+                  </div>
+                </label>
+
+                <button type="button" id="sale-add-btn" class="btn sale-btn sale-btn-add" data-i18n="sales.register.add">
+                  Adicionar
+                </button>
+              </div>
+
+              <div id="sale-product-info" class="sale-product-info hidden" aria-live="polite"></div>
+
+              <div class="sale-cart-section">
+                <div class="sale-cart-toolbar">
+                  <button type="button" id="sale-clear-cart-btn" class="btn btn-small btn-ghost" disabled data-i18n="sales.register.clearCart">
+                    Limpar carrinho
+                  </button>
+                </div>
+
+                <div class="table-wrapper sale-cart-wrapper">
+                  <table class="products-table sale-cart-table">
+                    <thead>
+                      <tr>
+                        <th data-i18n="sales.cart.table.product">Produto</th>
+                        <th data-i18n="sales.cart.table.qty">Qtd.</th>
+                        <th data-i18n="sales.cart.table.unitPrice">Preço un.</th>
+                        <th data-i18n="sales.cart.table.subtotal">Subtotal</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody id="sale-cart-body">
+                      <tr>
+                        <td colspan="5" class="empty-state sale-empty-state" data-i18n="sales.cart.empty">
+                          Nenhum item no carrinho.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <form id="sale-form" class="sale-checkout-form">
+                <label class="field sale-field-customer">
+                  <span data-i18n="sales.register.customer">Cliente</span>
+                  <input
+                    id="sale-customer"
+                    type="text"
+                    data-i18n-placeholder="stock.purchase.notePlaceholder"
+                    placeholder="Opcional"
+                    autocomplete="name"
+                  />
+                </label>
+
+                <label class="field sale-field-discount">
+                  <span data-i18n="sales.register.discount">Desconto</span>
+                  <input
+                    id="sale-discount"
+                    type="text"
+                    inputmode="decimal"
+                    class="decimal-input"
+                    value="0,00"
+                    data-i18n-placeholder="stock.product.pricePlaceholder" placeholder="0,00"
+                    autocomplete="off"
+                  />
+                </label>
+
+                <button type="submit" class="btn sale-btn sale-btn-finish" id="sale-submit-btn" disabled data-i18n="sales.register.finish">
+                  Finalizar venda
+                </button>
+
+                <div class="field sale-field-payment">
+                  <span data-i18n="sales.register.payment">Pagamento</span>
+                  <div class="sale-payment-pills" role="group" data-i18n-aria="sales.register.paymentAria" aria-label="Forma de pagamento">
+                    <button
+                      type="button"
+                      class="sale-payment-pill pill-pix active"
+                      data-sale-payment="pix"
+                      aria-pressed="true"
+                      data-i18n="payment.pix"
+                    >
+                      Pix
+                    </button>
+                    <button
+                      type="button"
+                      class="sale-payment-pill pill-cash"
+                      data-sale-payment="dinheiro"
+                      aria-pressed="false"
+                      data-i18n="payment.cash"
+                    >
+                      Dinheiro
+                    </button>
+                    <button
+                      type="button"
+                      class="sale-payment-pill pill-card"
+                      data-sale-payment="debito_credito"
+                      aria-pressed="false"
+                      data-i18n="payment.debitCredit"
+                    >
+                      Débito/Crédito
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+              <p id="sale-message" class="form-message form-message-compact sale-form-message" aria-live="polite"></p>
+            </section>
+
+            <section class="panel sale-recent-panel">
+              <div class="panel-header">
+                <h3 data-i18n="sales.recent.title">Últimas vendas</h3>
+                <a href="#" class="btn btn-small btn-ghost" data-route="historico-vendas" data-i18n="sales.recent.viewHistory">
+                  Ver histórico
+                </a>
+              </div>
+
+              <p class="table-sort-hint table-sort-hint-compact" data-i18n="sales.recent.sortHint">Clique em Data ou Produto para ordenar.</p>
+
+              <div class="table-wrapper">
+                <table class="products-table products-table-sortable sale-recent-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">
+                        <button
+                          type="button"
+                          class="table-sort-button active"
+                          data-recent-sale-sort="date"
+                          aria-sort="descending"
+                        >
+                          <span data-i18n="stockHistory.table.date">Data</span>
+                          <span class="table-sort-indicator">↓</span>
+                        </button>
+                      </th>
+                      <th scope="col">
+                        <button
+                          type="button"
+                          class="table-sort-button"
+                          data-recent-sale-sort="product"
+                          aria-sort="none"
+                        >
+                          <span data-i18n="stock.table.product">Produto</span>
+                          <span class="table-sort-indicator"></span>
+                        </button>
+                      </th>
+                      <th scope="col" data-i18n="sales.recent.table.payment">Pagamento</th>
+                      <th scope="col" data-i18n="sales.register.total">Total</th>
+                      <th scope="col" data-i18n="sales.recent.table.customer">Cliente</th>
+                    </tr>
+                  </thead>
+                  <tbody id="sales-body">
+                    <tr>
+                      <td colspan="5" class="empty-state" data-i18n="stock.loading">Carregando...</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section id="screen-historico-vendas" class="screen" data-screen>
+          <div class="summary-cards summary-cards-compact">
+            <article class="summary-card">
+              <span data-i18n="sales.summary.totalSales">Total de vendas</span>
+              <strong id="sales-history-total-count">0</strong>
+            </article>
+            <article class="summary-card">
+              <span data-i18n="sales.summary.salesToday">Vendas hoje</span>
+              <strong id="sales-history-today-count">0</strong>
+            </article>
+            <article class="summary-card">
+              <span data-i18n="salesHistory.summary.totalRevenue">Receita total</span>
+              <strong id="sales-history-total-revenue">R$ 0,00</strong>
+            </article>
+            <article class="summary-card">
+              <span data-i18n="salesHistory.summary.revenueToday">Receita hoje</span>
+              <strong id="sales-history-today-revenue">R$ 0,00</strong>
+            </article>
+          </div>
+
+          <section class="panel sales-history-panel">
+            <div class="panel-header sales-history-panel-header">
+              <h3 data-i18n="salesHistory.panel.title">Todas as vendas</h3>
+            </div>
+
+            <div class="product-list-toolbar sales-history-toolbar">
+              <label class="field product-list-search">
+                <span data-i18n="common.search">Buscar</span>
+                <input
+                  id="sales-history-search"
+                  type="search"
+                  data-i18n-placeholder="salesHistory.searchPlaceholder"
+                  placeholder="Produto, código, cliente ou pagamento..."
+                  class="search-input"
+                />
+              </label>
+
+              <div class="product-list-toolbar-row">
+                <div class="status-filter-group" role="group" data-i18n-aria="salesHistory.paymentFilterAria" aria-label="Filtrar por pagamento">
+                  <span class="status-filter-label" data-i18n="sales.register.payment">Pagamento</span>
+                  <div class="sale-payment-pills">
+                    <button
+                      type="button"
+                      class="sale-payment-pill pill-pix"
+                      data-sales-history-payment="pix"
+                      aria-pressed="false"
+                      data-i18n="payment.pix"
+                    >
+                      Pix
+                    </button>
+                    <button
+                      type="button"
+                      class="sale-payment-pill pill-cash"
+                      data-sales-history-payment="dinheiro"
+                      aria-pressed="false"
+                      data-i18n="payment.cash"
+                    >
+                      Dinheiro
+                    </button>
+                    <button
+                      type="button"
+                      class="sale-payment-pill pill-card"
+                      data-sales-history-payment="debito_credito"
+                      aria-pressed="false"
+                      data-i18n="payment.debitCredit"
+                    >
+                      Débito/Crédito
+                    </button>
+                  </div>
+                </div>
+
+                <div class="date-range-group" role="group" data-i18n-aria="common.periodFilterAria" aria-label="Filtrar por período">
+                  <span class="status-filter-label" data-i18n="common.period">Período</span>
+                  <div class="date-range-inline">
+                    <div class="date-range-presets">
+                      <button
+                        type="button"
+                        class="date-range-preset"
+                        data-sales-history-date-preset="today"
+                        aria-pressed="false"
+                        data-i18n="common.preset.today"
+                      >
+                        Hoje
+                      </button>
+                      <button
+                        type="button"
+                        class="date-range-preset"
+                        data-sales-history-date-preset="7"
+                        aria-pressed="false"
+                        data-i18n="common.preset.last7Days"
+                      >
+                        7 dias
+                      </button>
+                      <button
+                        type="button"
+                        class="date-range-preset"
+                        data-sales-history-date-preset="month"
+                        aria-pressed="false"
+                        data-i18n="common.preset.thisMonth"
+                      >
+                        Este mês
+                      </button>
+                      <button
+                        type="button"
+                        class="date-range-preset"
+                        data-sales-history-date-preset="year"
+                        aria-pressed="false"
+                        data-i18n="common.preset.thisYear"
+                      >
+                        Este ano
+                      </button>
+                    </div>
+                    <input
+                      id="sales-history-date-from"
+                      type="date"
+                      class="date-range-input"
+                      data-i18n-aria="common.dateFromAria"
+                      aria-label="Data inicial"
+                    />
+                    <span class="date-range-separator" aria-hidden="true">–</span>
+                    <input
+                      id="sales-history-date-to"
+                      type="date"
+                      class="date-range-input"
+                      data-i18n-aria="common.dateToAria"
+                      aria-label="Data final"
+                    />
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  id="sales-history-clear-filters"
+                  class="btn btn-small btn-ghost product-filter-clear"
+                  data-i18n="common.clearFilters"
+                >
+                  Limpar filtros
+                </button>
+              </div>
+            </div>
+
+            <p
+              id="sales-history-results"
+              class="sales-history-results hidden"
+              aria-live="polite"
+            >
+              <span id="sales-history-showing-text"></span>
+              <span class="sales-history-results-separator" aria-hidden="true">·</span>
+              <span>
+                <span data-i18n="salesHistory.results.filteredRevenue">Receita filtrada:</span>
+                <strong id="sales-history-filtered-revenue">R$ 0,00</strong>
+              </span>
+            </p>
+
+            <p class="table-sort-hint" data-i18n="salesHistory.sortHint">Clique nos cabeçalhos da tabela para ordenar.</p>
+
+            <div class="table-wrapper sales-history-table-wrapper">
+              <table class="products-table products-table-sortable sales-history-table">
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      <button
+                        type="button"
+                        class="table-sort-button active"
+                        data-sort-column="date"
+                        aria-sort="descending"
+                      >
+                        <span data-i18n="stockHistory.table.date">Data</span>
+                        <span class="table-sort-indicator">↓</span>
+                      </button>
+                    </th>
+                    <th scope="col">
+                      <button type="button" class="table-sort-button" data-sort-column="customer">
+                        <span data-i18n="salesHistory.table.customer">Cliente</span>
+                        <span class="table-sort-indicator"></span>
+                      </button>
+                    </th>
+                    <th scope="col">
+                      <button type="button" class="table-sort-button" data-sort-column="payment">
+                        <span data-i18n="sales.recent.table.payment">Pagamento</span>
+                        <span class="table-sort-indicator"></span>
+                      </button>
+                    </th>
+                    <th scope="col">
+                      <button type="button" class="table-sort-button" data-sort-column="product">
+                        <span data-i18n="stock.table.product">Produto</span>
+                        <span class="table-sort-indicator"></span>
+                      </button>
+                    </th>
+                    <th scope="col" data-i18n="stock.table.barcode">Código de barras</th>
+                    <th scope="col">
+                      <button type="button" class="table-sort-button" data-sort-column="quantity">
+                        <span data-i18n="sales.cart.table.qty">Qtd.</span>
+                        <span class="table-sort-indicator"></span>
+                      </button>
+                    </th>
+                    <th scope="col" data-i18n="salesHistory.table.unitPrice">Preço unit.</th>
+                    <th scope="col" data-i18n="salesHistory.table.discount">Desconto</th>
+                    <th scope="col">
+                      <button type="button" class="table-sort-button" data-sort-column="total">
+                        <span data-i18n="sales.register.total">Total</span>
+                        <span class="table-sort-indicator"></span>
+                      </button>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody id="sales-history-body">
+                  <tr>
+                    <td colspan="9" class="empty-state" data-i18n="salesHistory.loading">Carregando...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="sales-history-pagination" class="table-pagination hidden" data-i18n-aria="salesHistory.paginationAria" aria-label="Paginação do histórico">
+              <p id="sales-history-page-range" class="table-pagination-range">Exibindo 0 de 0</p>
+              <div class="table-pagination-controls">
+                <button type="button" class="btn btn-small btn-ghost" id="sales-history-prev-page" data-i18n="common.pagination.previous">
+                  Anterior
+                </button>
+                <span id="sales-history-page-info" class="table-pagination-info">Página 1 de 1</span>
+                <button type="button" class="btn btn-small btn-ghost" id="sales-history-next-page" data-i18n="common.pagination.next">
+                  Próxima
+                </button>
+              </div>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>
