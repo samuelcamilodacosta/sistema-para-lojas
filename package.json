@@ -1,12 +1,16 @@
 {
-  "name": "sistema",
+  "name": "sistema-para-lojas",
   "version": "1.0.0",
-  "description": "Aplicativo desktop com Electron",
+  "description": "Sistema desktop offline para gestão de estoque e vendas",
   "main": "dist/main.js",
+  "author": "Samuel Camilo da Costa",
   "scripts": {
     "build:main": "tsc -p tsconfig.main.json",
     "build:renderer": "esbuild src/renderer/index.ts --bundle --outfile=dist/renderer.js --platform=browser --target=es2020",
-    "build": "npm run build:main && npm run build:renderer && copyfiles -u 1 \"src/index.html\" dist && copyfiles -u 1 \"src/styles/**/*\" dist",
+    "build": "npm run build:main && npm run build:renderer && copyfiles -u 1 \"src/index.html\" dist && copyfiles -u 1 \"src/styles/**/*\" dist && copyfiles -u 0 \"build/icon.png\" dist",
+    "icons": "node scripts/generate-icon.mjs",
+    "dist": "npm run icons && npm run build && electron-builder --win",
+    "dist:portable": "npm run icons && npm run build && electron-builder --win portable",
     "start": "npm run build && electron .",
     "dev": "node scripts/dev.mjs",
     "dev:watch:main": "tsc -p tsconfig.main.json --watch --preserveWatchOutput",
@@ -19,9 +23,49 @@
     "test:coverage": "vitest run --coverage",
     "screenshots": "npm run build && npm run seed && electron scripts/capture-screenshots.cjs"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["electron", "typescript", "sqlite", "desktop", "pos", "inventory"],
   "license": "ISC",
+  "build": {
+    "appId": "com.samuelcamilo.sistema-para-lojas",
+    "productName": "Sistema para Lojas",
+    "copyright": "Copyright © 2026 Samuel Camilo da Costa",
+    "directories": {
+      "buildResources": "build",
+      "output": "out/release"
+    },
+    "files": [
+      "dist/**/*",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "node_modules/sql.js/**"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "portable": {
+      "artifactName": "Sistema-para-Lojas-${version}-portable.exe"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "artifactName": "Sistema-para-Lojas-${version}-setup.exe"
+    }
+  },
   "dependencies": {
     "chart.js": "^4.5.1",
     "sql.js": "^1.14.1"
@@ -33,10 +77,13 @@
     "@vitest/coverage-v8": "^4.1.8",
     "copyfiles": "^2.4.1",
     "electron": "^41.7.1",
+    "electron-builder": "^26.15.3",
     "electron-reloader": "^1.2.3",
     "esbuild": "^0.25.5",
     "jsdom": "^29.1.1",
     "nodemon": "^3.1.10",
+    "png-to-ico": "^3.0.1",
+    "sharp": "^0.35.1",
     "typescript": "^5.8.3",
     "vitest": "^4.1.8"
   }

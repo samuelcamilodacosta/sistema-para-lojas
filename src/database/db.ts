@@ -2,6 +2,22 @@ import fs from 'fs';
 import path from 'path';
 import initSqlJs, { Database as SqlDatabase, SqlJsStatic, SqlValue } from 'sql.js';
 
+function resolveSqlJsWasmDirectory(): string {
+  const unpackedDirectory = path.join(
+    process.resourcesPath ?? '',
+    'app.asar.unpacked',
+    'node_modules',
+    'sql.js',
+    'dist',
+  );
+
+  if (process.resourcesPath && fs.existsSync(path.join(unpackedDirectory, 'sql-wasm.wasm'))) {
+    return unpackedDirectory;
+  }
+
+  return path.dirname(require.resolve('sql.js/dist/sql-wasm.wasm'));
+}
+
 export class AppDatabase {
   private sql: SqlJsStatic | null = null;
   private db: SqlDatabase | null = null;
@@ -12,7 +28,7 @@ export class AppDatabase {
   }
 
   async init(): Promise<void> {
-    const wasmDirectory = path.dirname(require.resolve('sql.js'));
+    const wasmDirectory = resolveSqlJsWasmDirectory();
 
     this.sql = await initSqlJs({
       locateFile: (file: string) => path.join(wasmDirectory, file),
