@@ -1,0 +1,6 @@
+{
+  "watch": ["src/index.html", "src/styles"],
+  "ext": "html,css",
+  "exec": "copyfiles -u 1 \"src/index.html\" dist && copyfiles -u 1 \"src/styles/**/*\" dist",
+  "delay": 150
+}
