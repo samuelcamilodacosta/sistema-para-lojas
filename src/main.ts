@@ -1,4 +1,5 @@
 import { app, BrowserWindow, Menu } from 'electron';
+import fs from 'fs';
 import path from 'path';
 import { AppDatabase } from './database/db';
 import { resolveDataDir } from './database/getDataDir';
@@ -31,12 +32,29 @@ setupDevReloader();
 
 let database: AppDatabase | null = null;
 
+function resolveAppIconPath(): string | undefined {
+  const candidates = [
+    path.join(__dirname, 'icon.png'),
+    path.join(__dirname, '..', 'build', 'icon.png'),
+  ];
+
+  for (const candidate of candidates) {
+    if (fs.existsSync(candidate)) {
+      return candidate;
+    }
+  }
+
+  return undefined;
+}
+
 function createWindow(): void {
   const mainWindow = new BrowserWindow({
     width: 1200,
     height: 800,
     minWidth: 900,
     minHeight: 600,
+    icon: resolveAppIconPath(),
+    title: 'Sistema para Lojas',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
